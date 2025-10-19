@@ -90,6 +90,24 @@ Para que evitar problemas entre dependências e versões é recomendável utiliz
 
 ---
 
+## 📦 Criando Executável (Opcional)
+
+É posível criar um executável utilizando `PyInstaller`:
+
+**Nota:** Podem ocorrer alguns problemas ao tentar criar o arquivo executável a partir de um ambiente virtual `venv` se você realmente deseja criar o executável é necessário sair do ambiente virtual executando `deactivate` e então fora do ambiente, instale todas as dependências novamente de forma global em seu sistema.
+
+- Linux / macOS:
+    No mesmo diretório do projeto, execute:
+
+    ```bash
+    pyinstaller --noconfirm --clean --onefile --windowed --collect-all pgzero --collect-all pygame --add-data "images:images" --add-data "sounds:sounds"  --add-data "music:music" main.py
+    ```
+
+Foram cridas algumas pastas, o arquivo executável `main`será gerado na pasta `dist/`.
+
+Para Windows o método é parecido porém não foi testado e por isso não será divulgado aqui.
+
+---
 ## 📝 Licença
 
 - **MIT License**
